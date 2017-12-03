@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class LocalVars
+{
+  private static int birdsSpecies = 0;
+  
+  public static void main(String[] args)
+  {
+    int texasBirds = texas();
+    int californiaBirds = california();
+    birdSpecies = texasBirds + californiaBirds;
+    
+    System.out.printf("%nThe total number of "
+                        + "birds for California and "
+                        + "Texas are %d birds. %n", birdspecies);
+  }//END main()
+  
+  public static int texas()
+  {
+    int birdSpecies = 647;
+    System.out.printf("%nIn Texas there are %d bird "
+                        + "species.%n", birdSpecies);
+    return birdSpecies;
+  }//End texas()
+  
+  public static int california()
+  {
+    int birdSpecies = 0;
+    Scanner keyboard = new Scanner(System.in);
+    
+    System.out.printf("%nEnter the number of bird "
+                        + "species in California: ");
+    
+    birdspecies = keyboard.nextInt();
+    
+    System.out.printf("%nIn California there are %d "
+                        + "bird species.%n", birdSpecies);
+    return birdSpecies;
+  }//End California() - static int
+}//End application class BirdsArrays

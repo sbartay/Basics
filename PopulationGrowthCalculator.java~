@@ -43,7 +43,7 @@ public class PopulationGrowthCalculator
   System.out.printf("Enter Annual Population Growth Rate: "); //ENTER CURRENT GROWTH RATE
   growthRate = input.nextDouble();
   annualPopIncrease = currentPop * (1 + growthRate);
-  System.out.printf("%nAfter 1 year, the world population will be %.,0f.%n", annualPopIncrease);
+  System.out.printf("%nAfter 1 year, the world population will be %,.0f.%n", annualPopIncrease);
   annualPopIncrease = annualPopIncrease * (1 + growthRate);
   System.out.printf("%nAfter 2 years, the world population will be %,.0f.%n", annualPopIncrease);
   annualPopIncrease = annualPopIncrease * (1 + growthRate);

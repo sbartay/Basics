@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class DemoStaticVoidMethod
+{
+/* Use of private only allows the code in 
+ * the class to use the class fields or 
+ * variables. For security reasons, class 
+ * fields are to be private because where they
+ * are declared gives them more visibility
+ * and makes them more vulnerable. 
+ * Use static in variable declarations
+ * because methods that access these variables are also static. 
+ * 
+ * Class level variables can use used by all
+ * the methods in the same class, which is why
+ * personName is used in main() and setName(). 
+ */
+  private static String personName;
+  private static Scanner input = new Scanner(System.in);
+  public static void setName();
+  
+  public static void main(String[] args)
+  {
+    String greeting = "Hello";
+    
+    setName(greeting);  //Calling statement of a method from within the same class. 
+    
+    // System.out.printf("%n%s %s!%n", greeting, personName);
+    
+    System.exit(0);
+  }//END main()
+  
+/**
+ * setname() prompts for a name and stores it in a class field or variable. 
+ * It is static because the main(), which is static calls it. 
+ * This method doesn'nt receive anything because its parameter list is 
+ * empty. It doesn't return anything because its return type is void. 
+ * When called, it just performs its task as represented by the code in its body. 
+ */
+  
+//END setName()
+  }
+      public static void setName(String greeting)
+  {
+    System.out.print("%nEnter your name: %s ",greeting);
+    
+  }
