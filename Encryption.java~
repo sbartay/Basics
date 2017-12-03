@@ -1,0 +1,59 @@
+/**
+ * @(#)Encryption.java
+ * @author Saffi Bartay
+ * @version 1.0 09/27/2017 6:18 PM CST
+ * 
+ * PROGRAM PURPOSE: This program reads a four-digit integer entered by
+ * the user and encrypts it. The encrypted value is then printed.
+ */
+
+import java.util.Scanner;
+
+public class Encryption1
+{
+  public static void main(String[] args)
+  {
+    int number, digit1, digit2, digit3, digit4, encryptedNumber, numberLength;  //To hold value for digit2, digit2, digit3, digit4, encryptedNumber, numberLength
+    String str = "";                                                            //To hold the value for String str
+    char another = 'Y';                                                         //To hold value if user wishes to encrypt another value after a 4 digit number has been entered
+    Scanner input = new Scanner(System.in);                                      //Create a Scanner object for the keyboard input
+       
+   do
+   {
+     do 
+     {
+      System.out.printf("%nEnter a four-digit number (0000 to 9999): ");  //Prompt the user to enter a four digit number from 0000 to 9999
+      str = input.nextLine();                                                    //Reads what is entered through the keyboar
+      numberLength = str.length();                                               //Counts the number of input entered
+      
+      if (numberLength < 4)                                 
+      {
+        System.out.printf("%nEnter a 4-digit number and not a 3 digit number.");
+        str = input.nextLine();                                                            numberLength = str.length();
+      } 
+      
+      if (numberLength > 4)
+      {
+      System.out.printf("%nEnter a 4-digit number and not a 5 digit number.");
+      }
+      else  
+      {
+      number = Integer.parseInt(str);
+      digit1 = ((number / 1000) + 7)% 10;
+      digit2 = (((number % 1000) / 100) + 7) % 10;
+      digit3 = (((number % 100) /10)+ 7) % 10;
+      digit4 = ((number % 10) + 7) % 10;
+      encryptedNumber = (digit1 * 10) + digit2 + (digit3 * 1000) + (digit4 * 100);
+      System.out.printf("%nThe encrypted number is %04d.", encryptedNumber);
+      }                                                                         //END else numberLength is equal to 4
+     }while (numberLength !=4); 
+     System.out.printf("%nDo you wish to encrypt another value (Y or N)?"); 
+     another = input.nextLine().charAt(0);
+   }while(Character.toUpperCase(another) == 'Y');                               //END if response is == 'Y'
+        System.exit(0);
+  }                                                                             //END main()
+}                                                                               //END APPLICATION CLASS Encryption
+     
+    
+
+      
