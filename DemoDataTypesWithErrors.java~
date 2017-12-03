@@ -1,0 +1,57 @@
+/**
+ * @ (@) DemoDataTypeWithErrors
+ * @ author Saffi Bartay
+ * @ version 1.00 09/04/2017 2:30 PM
+ * 
+ * PROGRAM PURPOSE: To demonstrate different data types. 
+ */
+
+import java.util.Scanner; //Access class that handles input. 
+
+public class DemoDataTypesWithErrors
+{
+/**
+ * Prompt for a student's name, initial, age and GPA;
+ * then, print/display the information. 
+ */
+  public static void main(String[] args)
+  {
+  int age = 0;
+  char firstInitial = ' ';
+  String lastName = " ";
+  double gpa = 0.00;
+  Scanner input = new Scanner(System.in);
+  char another = 'y';
+  
+  while (Character.toUpperCase(another) == 'y');
+  {
+  System.out.printf("%nPlease enter your first initial: ");
+    firstInitial = input.nextLine().charAt(0);
+    
+    System.out.printf("%nPlease enter your last name: ");
+      lastName = input.nextLine();
+      
+      System.out.printf("%n%s" , "Please enter your age: ");
+      age = input.nextInt();
+      
+      System.out.printf("%nPlease enter your GPA: ");
+      gpa = input.nextDouble();
+      
+       System.out.printf("%n%nYour Name: %s. %s"
+                          + "%nYour Age: %d"
+                          + "%nYour GPA: %.2f%n" , firstInitial, lastName, age, gpa);
+      
+      System.out.printf("\n Do you want to enter another name?" , another); 
+      
+      another = input.next().charAt(0);
+    
+//CLEARS BUFFER OF WHAT'S LEFT BY next METHODS FOR NUMBERS
+ 
+    
+ System.exit(0);
+ 
+  } //END 
+  
+ } //END main()
+  
+} //END APPLICATION CLASS DemoDataTypesWithErrors

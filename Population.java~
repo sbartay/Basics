@@ -1,0 +1,38 @@
+
+import java.util.Scanner;
+
+public class Population
+{
+  public static void main(String[] args)
+  {
+  Scanner input = new Scanner(System.in);
+  
+  double currentPop;
+  float growthRate;
+  double yearOne;
+  double yearTwo;
+  double yearThree;
+  
+  System.out.printf("Enter the current world population: ");
+  currentPop = input.nextDouble();
+  currentPop = currentPop * 1000000000;
+  
+  System.out.printf("Enter the annual world population growth rate: ");
+  growthRate = input.nextFloat();
+  growthRate = growthRate / 100;
+  
+  yearOne = currentPop + ( currentPop * growthRate );
+  System.out.printf("\nWorld population after one year: %.0f\n", yearOne);
+  currentPop = yearOne;
+  
+  yearTwo = currentPop + ( currentPop * growthRate );
+  System.out.printf("\nWorld population after two years: %.0f\n", yearTwo);
+  currentPop = yearTwo;
+  
+  yearThree = currentPop + (currentPop * growthRate);
+  System.out.printf("\nWorld population after three years: %.0f\n", yearThree);
+  currentPop = yearThree;
+  
+   }
+}
+

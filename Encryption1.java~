@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class Encryption
+{
+  public static void main(String[] args)
+  {
+    int number, digit1, digit2, digit3, digit4, encryptedNumber, numberLength;  //To hold value for digit2, digit2, digit3, digit4, encryptedNumber, numberLength
+    String str = "";                                                            //To hold the value for String str
+    char another = 'Y';                                                         //To hold value if user wishes to encrypt another value after a 4 digit number has been entered
+    Scanner input = new Scanner(System.in);                                      //Create a Scanner object for the keyboard input
+       
+   do
+   {
+     do 
+     {
+      System.out.printf("%nPlease enter a four-digit number (0000 to 9999): ");  //Prompt the user to enter a four digit number from 0000 to 9999
+      str = input.nextLine();                                                    //Reads what is entered through the keyboar
+      numberLength = str.length();                                               //Counts the number of input entered
+      
+      if (numberLength < 4 || numberLength > 4)                                 
+      {
+        System.out.printf("%nPlease enter a 4-digit number not a z9 value.");   //if numberLength is lesser than or greater than 4 program forces the user to enter a 4 digit number
+      } //END if numberLength < 4 || numberLength > 4
+      else  
+      {
+      number = Integer.parseInt(str);
+      digit1 = ((number / 1000) + 7)% 10;
+      digit2 = (((number % 1000) / 100) + 7) % 10;
+      digit3 = (((number % 100) /10)+ 7) % 10;
+      digit4 = ((number % 10) + 7) % 10;
+      encryptedNumber = (digit1 * 10) + digit2 + (digit3 * 1000) + (digit4 * 100);
+      System.out.printf("%nThe encrypted number is %04d.", encryptedNumber);
+      }                                                                         //END else numberLength is equal to 4
+     }while (numberLength !=4); 
+     System.out.printf("%nDo you wish to encrypt another value (Y or N)?"); 
+     another = input.nextLine().charAt(0);
+   }while(Character.toUpperCase(another) == 'Y');                               //END if response is = 'Y"
+        System.exit(0);
+  }                                                                             //END main()
+}                                                                               //END APPLICATION CLASS Encryption
+     

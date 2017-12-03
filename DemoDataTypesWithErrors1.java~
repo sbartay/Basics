@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class DemoDataTypesWithErrors
+{
+  public static void main(String[] args)
+  {
+    String lastName = "";
+    int age = 0;
+    char firstInitial = ' ';
+    double gpa = 0.0;
+    char another = 'y';
+    Scanner input = new Scanner(System.in);
+    
+    System.out.printf("%nPlease enter your first initial: ");
+      firstInitial = input.nextLine().charAt(0);
+      
+      System.out.printf("%nPlease enter your last name: ");
+      lastName = input.nextLine();
+      
+      System.out.printf("%n%s" , "Please enter your age: ");
+      age = input.nextInt();
+      
+      System.out.printf("%nPlease enter your GPA: ");
+      gpa = input.nextDouble();
+      
+       System.out.printf("%n%nYour Name: %s. %s"
+                          + "%nYour Age: %d"
+                          + "%nYour GPA: %.2f%n" , firstInitial, lastName, age, gpa);
+      
+      System.out.printf("%nDo you want to enter another name? " , another); 
+      another = input.nextChar();
+      
+      System.out.printf("%nPlease enter your first initial: ");
+      firstInitial = input.nextLine().charAt(0);
+      System.out.printf("%nPlease enter your last name: ");
+      lastName = input.nextLine();
+      
+      System.out.printf("%n%s" , "Please enter your age: ");
+      age = input.nextInt();
+      
+      System.out.printf("%nPlease enter your GPA: ");
+      gpa = input.nextDouble();
+      
+       System.out.printf("%n%nYour Name: %s. %s"
+                          + "%nYour Age: %d"
+                          + "%nYour GPA: %.2f%n" , firstInitial, lastName, age, gpa);
+      
+      System.out.printf("%nDo you want to enter another name? " , another); 
+      
+    
+  } //END main()
+} //END
+  

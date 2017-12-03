@@ -1,0 +1,56 @@
+
+/**
+ * @(#)PopulationGrowthCalculator
+ * @author Saffi Bartay
+ * @version 1.00 09/04/2017
+ * 
+ * PROGRAM PURPOSE: Based on the current annual population
+ * of 7.5 billion and growth rate of 0.1%, calculate the
+ * world population after one, two, and three years. Prompt
+ * for the world population and growth rate.
+ */
+
+/**
+ * The current world population and its growth rate are 
+ * prompted for. The calculations are as follows:
+ * 
+ * Multiply the world population value by 1 billion in the 
+ * same statement as the read for the value.
+ * 
+ * After year 1: Future population value by 1 billion in the
+ * same statement as the read for the value. 
+ * 
+ * After year 2: Future population is current population
+ * multiplied by 1 plus growth rate. 
+ * 
+ * After year 3: Same formula as year 2.
+ */
+
+import java.util.Scanner;
+
+public class PopulationGrowthCalculator 
+{
+  public static void main(String[] args)
+{
+  Scanner input = new Scanner(System.in);
+  double currentPop = 0.0; 
+  double growthRate = 0.0; 
+  double annualPopIncrease = 0.0; 
+  
+  
+  System.out.printf("Enter Current World Population: "); //ENTER CURRENT POPULATION
+  currentPop = input.nextDouble() * 1000000000;
+  System.out.printf("Enter Annual Population Growth Rate: "); //ENTER CURRENT GROWTH RATE
+  growthRate = input.nextDouble();
+  annualPopIncrease = currentPop * (1 + growthRate);
+  System.out.printf("%nAfter 1 year, the world population will be %.,0f.%n", annualPopIncrease);
+  annualPopIncrease = annualPopIncrease * (1 + growthRate);
+  System.out.printf("%nAfter 2 years, the world population will be %,.0f.%n", annualPopIncrease);
+  annualPopIncrease = annualPopIncrease * (1 + growthRate);
+  System.out.printf("%nAfter 3 years, the world population will be %,.0f.%n", annualPopIncrease);
+  
+  System.out.println(); //EXIT 
+  
+   
+  } //END of main
+} //END of PopulationGrowthCalculator
